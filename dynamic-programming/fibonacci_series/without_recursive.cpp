@@ -1,25 +1,25 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int fib(int n){
-  if (n<2) return n;
-
-  int first=0, second=1, nth=1;
-  for (int i=2; i<n; i++){
-    nth = first + second;
+  int first=0, second=1, next, i;
+  if(n<2) return n;
+  for (i=2; i<=n; i++){
+    next = second + first;
     first = second;
-    second = nth;
+    second = next;
   }
-  return nth;
+  return next;
 }
-int main(){
+int main() {
   int num;
-  cout<< "Enter the number for fibo series: ";
-  cin>> num;
-  for (int i=0; i<num; i++){
-    cout<< fib(num) << " ";
-  }
-  cout<< endl;
-
-  return 0;
-}
+   cout<<"Enter the number of elements: ";
+   cin>>num;
+   for (int i=0; i<num; i++){
+     cout<< fib(i) << " ";
+   }
+   cout<< endl;
+    cout<< fib(9);
+    cout<< endl;
+     return 0;
+   }
